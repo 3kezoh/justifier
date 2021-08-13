@@ -3,12 +3,14 @@
  */
 
 import "module-alias/register";
-import { app, logger } from "@config";
-import { port } from "@config/globals";
+import { app, logger, mongoose } from "@config";
+import { mongo, port } from "@config/globals";
 import chalk from "chalk";
 import http from "http";
 
 app.set("port", port);
+
+mongoose.connect(mongo.uri);
 
 const server = http.createServer(app);
 

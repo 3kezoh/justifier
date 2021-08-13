@@ -20,3 +20,13 @@ export const jwt = {
 } as const;
 
 export const port = env.PORT;
+
+const MONGO_URIS: { [index: string]: string } = {
+  production: env.MONGODB_URI ?? "",
+  development: env.MONGODB_URI_LOCAL ?? "",
+  test: env.MONGODB_URI_TEST ?? "",
+} as const;
+
+export const mongo = {
+  uri: MONGO_URIS[env.NODE_ENV ?? "development"],
+} as const;
