@@ -1,0 +1,28 @@
+{
+  "env": {
+    "commonjs": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": ["airbnb-typescript/base", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 12
+  },
+  "plugins": ["@typescript-eslint"],
+  "rules": {},
+  "settings": {
+    "import/resolver": {
+      "alias": [
+        ["@components", "./src/components"],
+        ["@Auth", "./src/components/auth"],
+        ["@User", "./src/components/user"],
+        ["@bin", "./src/bin"],
+        ["@config", "./src/config"],
+        ["@middlewares", "./src/middlewares"],
+        ["@utils", "./src/utils"],
+        ["@test", "./src/utils/test"]
+      ]
+    }
+  }
+}
