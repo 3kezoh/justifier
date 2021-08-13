@@ -14,4 +14,9 @@ for (const path of paths) {
 
 const { env } = process;
 
+export const jwt = {
+  secret: env.JWT_SECRET ?? "",
+  expiration: env.JWT_EXPIRATION ?? "1m",
+} as const;
+
 export const port = env.PORT;
