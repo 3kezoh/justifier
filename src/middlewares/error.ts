@@ -12,7 +12,7 @@ export const errorHandler = (
   res: Response,
   next: NextFunction,
 ) => {
-  if (process.env.NODE_ENV !== "development") delete err.stack;
+  if (process.env.NODE_ENV === "production") delete err.stack;
   res.status(err.status || StatusCodes.INTERNAL_SERVER_ERROR);
   return res.json(err);
 };

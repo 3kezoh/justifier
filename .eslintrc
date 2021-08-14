@@ -16,9 +16,11 @@
       "alias": [
         ["@components", "./src/components"],
         ["@Auth", "./src/components/auth"],
+        ["@Text", "./src/components/text"],
         ["@User", "./src/components/user"],
         ["@bin", "./src/bin"],
         ["@config", "./src/config"],
+        ["@lib", "./src/lib"],
         ["@middlewares", "./src/middlewares"],
         ["@utils", "./src/utils"],
         ["@test", "./src/utils/test"]

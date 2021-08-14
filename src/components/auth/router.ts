@@ -6,16 +6,34 @@ export const authRouter = Router();
 
 /**
  * @api {post} /auth/token
- * @apiVersion 1.0.0
+ * @apiVersion 0.1.0
  * @apiName Token
  * @apiGroup Auth
  * @apiPermission public
  *
  * @apiParam {String} email
  *
- * @apiSuccess (200 OK) accessToken
+ * @apiSuccess (200 OK) accessToken Grants access to /api/justify
+ * @apiSuccessExample {json} Success Payload:
+ * {
+ *   "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MTE2N2MxMWJkMDI2YmQxYjZlYjFiNzciLCJpYXQiOjE2Mjg5MDAzNzgsImV4cCI6MTYyOTE1OTU3OH0.OGa4TJReWmYj41hNVYUrOypPaVhBhdlEVMULFV1waNE"
+ * }
+ *
  *
  * @apiError (422 Unprocessable Entity) ValidationError Some parameters may contain invalid values
+ * @apiErrorExample {json} Error Payload:
+ * {
+ *   "status": 422,
+ *   "message": "Unprocessable Entity",
+ *   "errors": [
+ *       {
+ *           "value": "user@gmail",
+ *           "msg": "EMAIL_INVALID",
+ *           "param": "email",
+ *           "location": "body"
+ *       }
+ *   ]
+ * }
  */
 
 authRouter.post("/token", validation.token, controller.token);
