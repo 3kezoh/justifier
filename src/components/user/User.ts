@@ -11,7 +11,7 @@ export interface IUser {
 export interface IUserDocument extends IUser, Document {
   _id: Types.ObjectId;
   id: string;
-  token(): Promise<{ accessToken: string }>;
+  token(): Promise<string>;
 }
 
 const userSchema = new Schema<IUserDocument>(
@@ -32,13 +32,13 @@ userSchema.plugin(mongooseLeanId);
 userSchema.set("toObject", { versionKey: false });
 
 /**
- * Generates a JWT
+ * Signs the user id into a JWT
  */
 
 userSchema.methods.token = async function token() {
   const jwtPayload: jwtPayload = { sub: this._id };
   const accessToken = sign(jwtPayload, jwt.secret, { expiresIn: jwt.expiration });
-  return { accessToken };
+  return accessToken;
 };
 
 export const User: Model<IUserDocument> = model("User", userSchema);

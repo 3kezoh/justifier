@@ -11,9 +11,11 @@ export const authRouter = Router();
  * @apiGroup Auth
  * @apiPermission public
  *
+ * @apiHeader {String} Content-Type <code> application/json </code>
+ *
  * @apiParam {String} email
  *
- * @apiSuccess (200 OK) accessToken Grants access to /api/justify
+ * @apiSuccess (200 OK) accessToken Grants access to /api/*
  * @apiSuccessExample {json} Success Payload:
  * {
  *   "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MTE2N2MxMWJkMDI2YmQxYjZlYjFiNzciLCJpYXQiOjE2Mjg5MDAzNzgsImV4cCI6MTYyOTE1OTU3OH0.OGa4TJReWmYj41hNVYUrOypPaVhBhdlEVMULFV1waNE"
@@ -21,7 +23,7 @@ export const authRouter = Router();
  *
  *
  * @apiError (422 Unprocessable Entity) ValidationError Some parameters may contain invalid values
- * @apiErrorExample {json} Error Payload:
+ * @apiErrorExample {json} ValidationError Payload:
  * {
  *   "status": 422,
  *   "message": "Unprocessable Entity",

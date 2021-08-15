@@ -7,10 +7,9 @@ const options: StrategyOptions = {
   secretOrKey: jwt.secret,
 };
 
-const verify: VerifyCallback = async (payload, done) => {
+const verify: VerifyCallback = async ({ sub }, done) => {
   try {
-    const { email } = payload;
-    const user = await User.findOne({ email }, null, { upsert: true });
+    const user = await User.findById(sub);
     if (user) return done(null, user);
     return done(null, false);
   } catch (error) {

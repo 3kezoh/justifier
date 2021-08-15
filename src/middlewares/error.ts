@@ -13,6 +13,7 @@ export const errorHandler = (
   next: NextFunction,
 ) => {
   if (process.env.NODE_ENV === "production") delete err.stack;
+  console.error(err);
   res.status(err.status || StatusCodes.INTERNAL_SERVER_ERROR);
   return res.json(err);
 };

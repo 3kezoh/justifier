@@ -1,5 +1,6 @@
 /**
- * This file is the entry point of the project, after setting up the app port, it creates an HTTP server.
+ * This file is the entry point, it configures the application port and,
+ * connects the database and creates an HTTP server.
  */
 
 import "module-alias/register";
