@@ -17,7 +17,7 @@ export const justify = (s: string) => {
   let justifiedText = "";
   let line = new Line();
 
-  for (const word of s.split(/\s+/)) {
+  for (const word of s.trim().split(/\s+/)) {
     if (line.length + word.length > MAX_LINE_LENGTH) {
       if (line.words[line.words.length - 1] === " ") line.pop();
 

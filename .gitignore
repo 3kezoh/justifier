@@ -10,3 +10,6 @@ node_modules
 .env
 .env.local
 .env.example
+
+#test coverage
+coverage

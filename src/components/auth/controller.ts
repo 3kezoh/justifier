@@ -2,7 +2,6 @@ import { User } from "@User";
 import { NextFunction, Request, Response } from "express";
 
 /**
- * Finds a user by his email or creates him if he doesn't exist
  * @route POST /auth/token
  */
 

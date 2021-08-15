@@ -11,6 +11,8 @@ export const authRouter = Router();
  * @apiGroup Auth
  * @apiPermission public
  *
+ * @apiDescription Generates a token to access /api/justify
+ *
  * @apiHeader {String} Content-Type <code> application/json </code>
  *
  * @apiParam {String} email

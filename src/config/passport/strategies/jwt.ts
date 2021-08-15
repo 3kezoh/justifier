@@ -1,4 +1,4 @@
-import { jwt } from "@config/globals";
+import { jwt } from "@config/env";
 import { Strategy as JwtStrategy, StrategyOptions, ExtractJwt, VerifyCallback } from "passport-jwt";
 import { User } from "@User";
 

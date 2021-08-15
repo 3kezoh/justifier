@@ -7,7 +7,7 @@ export const textRouter = Router();
 
 /**
  * @apiDefine AuthorizationHeader
- * @apiHeader {String} Authorization <code> Bearer <accessToken> </code>
+ * @apiHeader {String} Authorization Bearer <code> accessToken </code>
  */
 
 /**
@@ -26,7 +26,8 @@ export const textRouter = Router();
 
 /**
  * @apiDefine UnsupportedMediaType
- * @apiError (415 Unsupported Media Type) APIError The payload is in a format not supported.
+ * @apiError (415 Unsupported Media Type) APIError The payload is in a format not supported,
+ * make sure the Content-Type header is <code> plain/text </code>
  */
 
 /**
@@ -38,6 +39,20 @@ export const textRouter = Router();
  *  }
  */
 
+/**
+ * @apiDefine PaymentRequired
+ * @apiError (402 Payment Required) APIError 80,000 words per sliding day for free
+ */
+
+/**
+ * @apiDefine PaymentRequiredExample
+ * @apiErrorExample {json} Payment Required Payload:
+ *  {
+ *    "status": 402,
+ *    "message": "Payment Required",
+ *  }
+ */
+
 textRouter.use(jwt.authenticate);
 
 /**
@@ -46,15 +61,15 @@ textRouter.use(jwt.authenticate);
  * @apiName Justify
  * @apiGroup Text
  *
+ * @apiDescription Justifies the body of a request, the length of the lines is 80 characters.
+ *
  * @apiUse AuthorizationHeader
  * @apiHeader {String} Content-Type <code> plain/text </code>
  *
- * @apiParam {String} text The text to justify
  * @apiParamExample {String} Request Body:
  * Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum neque posuere finibus malesuada. Nulla et ullamcorper ante. Praesent pretium luctus dapibus. Sed neque massa, mollis at venenatis et, lobortis vitae erat.
  *
- * @apiSuccess (200 OK) justifiedText The justified text
- * @apiSuccessExample {text/plain} Success Response Body:
+ * @apiSuccessExample {text/plain} Response Body:
  * HTTP/1.1 200 OK
  * Lorem ipsum dolor sit amet,  consectetur adipiscing elit. Cras vestibulum  neque
  * posuere finibus  malesuada.  Nulla et ullamcorper ante. Praesent pretium  luctus
@@ -65,6 +80,9 @@ textRouter.use(jwt.authenticate);
  *
  * @apiUse UnsupportedMediaType
  * @apiUse UnsupportedMediaTypeExample
+ *
+ * @apiUse PaymentRequired
+ * @apiUse PaymentRequiredExample
  */
 
 textRouter.post("/justify", validation.justify, controller.justify);

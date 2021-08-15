@@ -5,7 +5,7 @@
 
 import "module-alias/register";
 import { app, logger, mongoose } from "@config";
-import { mongo, port } from "@config/globals";
+import { mongo, port } from "@config/env";
 import chalk from "chalk";
 import http from "http";
 

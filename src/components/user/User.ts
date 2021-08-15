@@ -1,11 +1,15 @@
 import { jwtPayload } from "@@components";
-import { jwt } from "@config/globals";
+import { jwt } from "@config/env";
 import { sign } from "jsonwebtoken";
 import { Document, model, Model, Schema, Types } from "mongoose";
 import mongooseLeanId from "mongoose-lean-id";
 
 export interface IUser {
   email: string;
+  justifications: {
+    words: number;
+    createdAt: Date;
+  }[];
 }
 
 export interface IUserDocument extends IUser, Document {
@@ -14,19 +18,17 @@ export interface IUserDocument extends IUser, Document {
   token(): Promise<string>;
 }
 
-const userSchema = new Schema<IUserDocument>(
-  {
-    email: {
-      type: String,
-      match: /^\S+@\S+\.\S+$/,
-      unique: true,
-      trim: true,
-      lowercase: true,
-      required: true,
-    },
+const userSchema = new Schema<IUserDocument>({
+  email: {
+    type: String,
+    match: /^\S+@\S+\.\S+$/,
+    unique: true,
+    trim: true,
+    lowercase: true,
+    required: true,
   },
-  { timestamps: true },
-);
+  justifications: [{ words: Number, createdAt: { type: Date, default: Date.now } }],
+});
 
 userSchema.plugin(mongooseLeanId);
 userSchema.set("toObject", { versionKey: false });
