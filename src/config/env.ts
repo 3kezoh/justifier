@@ -4,11 +4,11 @@
 
 import { logger } from "@config/winston";
 import dotenv from "dotenv";
-import { readFileSync } from "fs";
+import { existsSync } from "fs";
 
 const path = ".env";
 
-if (readFileSync(".env")) {
+if (existsSync(".env")) {
   dotenv.config({ path });
   logger.info(`Using ${path} file to supply environment variables`);
 }
