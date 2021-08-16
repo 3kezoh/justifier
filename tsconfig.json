@@ -3,7 +3,7 @@
     "module": "commonjs",
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "target": "es2015",
+    "target": "es6",
     "outDir": "dist",
     "strict": true,
     "noImplicitAny": true,
@@ -36,7 +36,7 @@
       "@test/*": ["utils/test/*"]
     }
   },
-  "include": ["./src/**/*"],
+  "include": ["src/**/*"],
   "ts-node": {
     "transpileOnly": true
   }
