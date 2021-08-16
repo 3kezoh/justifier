@@ -33,6 +33,6 @@ jobs:
       with:
         app-name: Justifier
         slot-name: Production
-        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8A6F1E7B3ACA4EB2ACD6DA8D67EDF10B }}
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_29B70BAF6457463FA078337DC4D5048E }}
         package: .
 
