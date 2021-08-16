@@ -14,5 +14,6 @@ app.use(express.text());
 app.use(passport.initialize());
 app.use("/auth", authRouter);
 app.use("/api", textRouter);
+app.use("/docs", express.static("docs"));
 app.use(notFound);
 app.use(errorHandler);

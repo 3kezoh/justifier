@@ -40,7 +40,15 @@ NODE_ENV=
 PORT=
 ```
 
-5. Start the development server.
+5. Compile Typescript.
+
+```sh
+npm run build
+# or
+npm run build:watch
+```
+
+6. Start the development server.
 
 ```sh
 npm run dev
@@ -50,7 +58,7 @@ npm run dev
 
 You may want to use [Postman](https://www.postman.com) or the [curl CLI](https://curl.se) to consume the api.
 
-Please
+> **NOTE** There is a rate limit of 80.000 words per/day
 
 ## Example
 
@@ -58,7 +66,7 @@ You can send HTTP request at the live demo deployed on [heroku](https://www.hero
 
 <https://justifier-3kezoh.herokuapp.com>
 
-1. Get an access token at /auth/token.
+1. Get an access token at /auth/token with an email.
 
 ```sh
 curl --request POST https://justifier-3kezoh.herokuapp.com/auth/token \
