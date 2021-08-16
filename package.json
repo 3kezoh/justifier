@@ -64,15 +64,15 @@
     "typescript": "^4.3.5"
   },
   "_moduleAliases": {
-    "@components": "src/components",
-    "@Auth": "src/components/auth",
-    "@Text": "src/components/text",
-    "@User": "src/components/user",
-    "@bin": "src/bin",
-    "@config": "src/config",
-    "@lib": "src/lib",
-    "@middlewares": "src/middlewares",
-    "@utils": "src/utils",
-    "@test": "src/utils/test"
+    "@components": "dist/components",
+    "@Auth": "dist/components/auth",
+    "@Text": "dist/components/text",
+    "@User": "dist/components/user",
+    "@bin": "dist/bin",
+    "@config": "dist/config",
+    "@lib": "dist/lib",
+    "@middlewares": "dist/middlewares",
+    "@utils": "dist/utils",
+    "@test": "dist/utils/test"
   }
 }
