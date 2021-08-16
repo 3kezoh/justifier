@@ -35,7 +35,7 @@ export const justify = (s: string) => {
         if (m < n) line.addRandomSpace(m);
       }
 
-      justifiedText = justifiedText.concat(line.toString(), "\n");
+      justifiedText = justifiedText.concat(line.toString(), "\r\n");
       line = new Line();
     }
     line.push(word);

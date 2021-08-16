@@ -1,16 +1,16 @@
 /**
- * .env
+ * environment variable
  */
 
 import { logger } from "@config/winston";
 import dotenv from "dotenv";
 import { existsSync } from "fs";
 
-const path = ".env";
+const PATH = ".env";
 
-if (existsSync(".env")) {
-  dotenv.config({ path });
-  logger.info(`Using ${path} file to supply environment variables`);
+if (existsSync(PATH)) {
+  dotenv.config({ path: PATH });
+  logger.info(`Using ${PATH} file to supply environment variables`);
 }
 
 const { env } = process;

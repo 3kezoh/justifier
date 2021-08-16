@@ -78,11 +78,11 @@ textRouter.use(jwt.authenticate);
  * @apiUse Unauthorized
  * @apiUse UnauthorizedExample
  *
- * @apiUse UnsupportedMediaType
- * @apiUse UnsupportedMediaTypeExample
- *
  * @apiUse PaymentRequired
  * @apiUse PaymentRequiredExample
+ *
+ * @apiUse UnsupportedMediaType
+ * @apiUse UnsupportedMediaTypeExample
  */
 
 textRouter.post("/justify", validation.justify, controller.justify);

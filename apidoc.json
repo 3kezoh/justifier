@@ -1,6 +1,6 @@
 {
-  "name": "justifier",
+  "name": "Justifier",
   "version": "0.1.0",
-  "description": "justify things",
+  "description": "a rest api that justifies text",
   "title": "Justifier"
 }
