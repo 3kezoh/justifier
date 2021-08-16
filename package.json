@@ -15,7 +15,8 @@
     "lint": "eslint \"**/*.{.js,ts}\" --quiet --fix",
     "start": "node dist/bin/www.js",
     "test": "jest --runInBand --coverage",
-    "test:watch": "jest --watch --runInBand --coverage --silent"
+    "test:watch": "jest --watch --runInBand --coverage --silent",
+    "prepare": "husky install"
   },
   "author": "Stanley CRICO",
   "license": "ISC",
@@ -55,6 +56,7 @@
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-import": "^2.24.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^7.0.0",
     "jest": "^27.0.6",
     "lorem-ipsum": "^2.0.3",
     "mockdate": "^3.0.5",
