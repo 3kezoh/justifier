@@ -1,8 +1,9 @@
 # typescript
 dist/**/*
 
-# doc
+# docs
 doc
+docs
 
 # editor
 .vscode
