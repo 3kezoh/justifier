@@ -1,2 +1,11 @@
 # typescript
-dist
+dist/*
+
+# test coverage
+coverage/*
+
+# data definition files
+**/*.d.ts
+
+# custom types 
+src/@types

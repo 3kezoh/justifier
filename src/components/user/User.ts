@@ -1,4 +1,4 @@
-import { jwtPayload } from "@@components";
+import { JwtPayload } from "@@components";
 import { jwt } from "@config/env";
 import { sign } from "jsonwebtoken";
 import { Document, model, Model, Schema, Types } from "mongoose";
@@ -38,7 +38,7 @@ userSchema.set("toObject", { versionKey: false });
  */
 
 userSchema.methods.token = async function token() {
-  const jwtPayload: jwtPayload = { sub: this._id };
+  const jwtPayload: JwtPayload = { sub: this._id };
   const accessToken = sign(jwtPayload, jwt.secret, { expiresIn: jwt.expiration });
   return accessToken;
 };

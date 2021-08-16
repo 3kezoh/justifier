@@ -1,3 +1,6 @@
+# typescript
+dist/**/*
+
 # doc
 doc
 
@@ -13,3 +16,7 @@ node_modules
 
 #test coverage
 coverage
+
+# OS metadata
+.DS_Store
+Thumbs.db

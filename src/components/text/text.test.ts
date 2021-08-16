@@ -1,8 +1,11 @@
-import { accessToken, agent, setupMongoose, setupUser } from "@test";
+/* eslint-disable no-await-in-loop */
+import { app } from "@config";
+import { accessToken, setupMongoose, setupUser } from "@test";
 import { StatusCodes } from "http-status-codes";
 import { LoremIpsum } from "lorem-ipsum";
 import MockDate from "mockdate";
 import ms from "ms";
+import request from "supertest";
 
 setupMongoose();
 setupUser();
@@ -22,7 +25,7 @@ const lorem = new LoremIpsum();
  */
 
 const justify = (n: number, subtype?: string, token?: string) =>
-  agent
+  request(app)
     .post("/api/justify")
     .set("Content-Type", subtype ?? "text/plain")
     .set("Authorization", `Bearer ${token ?? accessToken}`)
@@ -44,13 +47,13 @@ describe("/api", () => {
     it("should permits 80 000 words per sliding day", async () => {
       MockDate.set(0);
 
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < 4; i += 1) {
         await justify(10_000).expect(StatusCodes.OK);
       }
 
       MockDate.set(ms("12h"));
 
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < 4; i += 1) {
         await justify(10_000).expect(StatusCodes.OK);
       }
 
@@ -58,7 +61,7 @@ describe("/api", () => {
 
       MockDate.set(ms("24h"));
 
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < 4; i += 1) {
         await justify(10_000).expect(StatusCodes.OK);
       }
 

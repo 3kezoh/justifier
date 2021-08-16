@@ -22,7 +22,7 @@ export const justify = (s: string) => {
       if (line.words[line.words.length - 1] === " ") line.pop();
 
       let m = MAX_LINE_LENGTH - line.length;
-      let n = Math.floor(line.words.length / 2);
+      const n = Math.floor(line.words.length / 2);
 
       if (m === n) line.enlargeSpace();
       if (m < n) line.addRandomSpace(m);

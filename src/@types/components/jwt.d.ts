@@ -1,3 +1,3 @@
 import { ObjectID } from "mongodb";
 
-export type jwtPayload = { sub: ObjectID };
+export type JwtPayload = { sub: ObjectID };

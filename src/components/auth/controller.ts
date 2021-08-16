@@ -10,7 +10,7 @@ export const token = async ({ body }: Request, res: Response, next: NextFunction
     const { email } = body;
     const user = await User.findOneAndUpdate({ email }, { email }, { upsert: true, new: true });
     const accessToken = await user.token();
-    res.json({ accessToken });
+    return res.json({ accessToken });
   } catch (error) {
     return next(error);
   }

@@ -2,6 +2,7 @@ import { getReasonPhrase, StatusCodes } from "http-status-codes";
 
 export class APIError extends Error {
   status: StatusCodes;
+
   message: string;
 
   constructor(status: StatusCodes, message?: string) {

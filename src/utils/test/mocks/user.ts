@@ -4,6 +4,7 @@
 
 import { User } from "@User";
 
+// eslint-disable-next-line import/no-mutable-exports
 export let accessToken = "";
 
 export const user = { email: "user@gmail.com" } as const;

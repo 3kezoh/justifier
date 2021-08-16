@@ -7,6 +7,7 @@ import { random } from "@lib/random";
 
 export class Line {
   length: number = 0;
+
   words: string[] = [];
 
   /**
@@ -36,9 +37,9 @@ export class Line {
    */
 
   addRandomSpace = (n: number) => {
-    for (let i = 0; i < n; i++) {
+    for (let i = 0; i < n; i += 1) {
       this.words[random(0, this.words.length - 2)] += " ";
-      this.length++;
+      this.length += 1;
     }
   };
 
@@ -49,7 +50,7 @@ export class Line {
   enlargeSpace = () => {
     for (let i = 1; i < this.words.length; i += 2) {
       this.words[i] += " ";
-      this.length++;
+      this.length += 1;
     }
   };
 

@@ -17,7 +17,10 @@ export const justify = async (req: Request, res: Response, next: NextFunction) =
 
     let threshold = 0;
     req.user.justifications = req.user.justifications.filter(({ words, createdAt }) => {
-      if (createdAt.getTime() > Date.now() - ms("1d")) return (threshold += words);
+      if (createdAt.getTime() > Date.now() - ms("1d")) {
+        threshold += words;
+        return true;
+      }
       return false;
     });
 
