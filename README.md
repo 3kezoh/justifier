@@ -64,7 +64,7 @@ You may want to use [Postman](https://www.postman.com) or the [curl CLI](https:/
 
 You can send HTTP request at the live demo deployed on [heroku](https://www.heroku.com).
 
-<https://justifier-3kezoh.herokuapp.com>
+<https://ekezoh-justifier.herokuapp.com>
 
 1. Get an access token at /auth/token with an email.
 
